@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.PixelFormat;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.util.Log;
@@ -139,6 +140,11 @@ public class PullToRefreshAttacher implements View.OnTouchListener {
 
         // Notify transformer
         mHeaderTransformer.onViewCreated(activity, mHeaderView);
+    }
+    
+    public void setHeaderViewTypeface(Typeface typeface) {
+    	TextView textView = (TextView)mHeaderView.findViewById(R.id.ptr_text);
+    	textView.setTypeface(typeface);
     }
 
     /**
